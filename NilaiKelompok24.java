@@ -7,6 +7,8 @@ public class NilaiKelompok24 {
 
         int i, j, nilai;
         float totalNilai, rataNilai;
+        float rataTertinggi = 0; // untuk menyimpan nilai rata-rata tertinggi
+        int kelompokTertinggi = 0; // untuk menyimpan nomor kelompok dengan rata-rata tertinggi
 
         //  struktur perulangan untuk outer loop
         i = 1;
@@ -22,9 +24,18 @@ public class NilaiKelompok24 {
 
             rataNilai = totalNilai / 5;
             System.out.println("Kelompok " + i + " nilai rata-rata = " + rataNilai);
+
+            // cek apakah rata-rata saat ini lebih tinggi dari sebelumnya
+            if (rataNilai > rataTertinggi) {
+                rataTertinggi = rataNilai;
+                kelompokTertinggi = i;
+            }
+
             i++;
 
         }
+
+        System.out.println("\n Kelompok dengan rata-rata tertinggi adalah Kelompok " + kelompokTertinggi + " dengan nilai rata-rata " + rataTertinggi);
     }
     
 }
